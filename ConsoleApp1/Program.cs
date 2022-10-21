@@ -1,4 +1,4 @@
-﻿
+
 using System;
 
 namespace ____
@@ -7,23 +7,22 @@ namespace ____
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Skriv in ett heltal ");
-            string heltal = Console.ReadLine();
-            for (int i = 0; i < heltal.Length; i++)
-            {
-                string tecken = heltal[i].ToString();
-                int siffra = int.Parse(tecken);
-                switch (siffra)
-                {
-                    case 9:
-                        siffra = 0;
-                        break;
-                    default:
-                        siffra++;
-                        break;
+            Console.WriteLine("Skriv ett medelande:");
+            string medelande = Console.ReadLine();
+            Console.WriteLine("Hur många steg åt höger ska medelandet stå?");
+            int steg = int.Parse(Console.ReadLine());
 
+            for (int i = 0; i < medelande.Length; i++)
+            {
+
+                string ord = medelande[i].ToString();
+
+                for (int j = 0; j < steg; j++)
+                {
+                    Console.Write(" ");
                 }
-                Console.Write(siffra);
+                Console.Write(ord);
+                Console.WriteLine();
             }
 
         }
